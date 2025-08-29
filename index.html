@@ -2,27 +2,196 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Makailyn Calhoun | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* --- Reset & base --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      color: #222;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Container for content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+      padding: 2.5rem 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #5e4b8b;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .project {
+      margin-top: 1.8rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Makailyn Calhoun</h1>
-    <p>High School Senior | Aspiring Computer Scientist</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Makailyn Calhoun</h1>
+      <p>High School Senior | Aspiring Software Developer</p>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a high school senior with a strong academic record, ranked in the top 3% of my class. I have completed multiple programming and computer science courses and currently maintain a 4.0 GPA. I'm passionate about technology, problem-solving, and building meaningful digital experiences.
-    </p>
-  </section>
+    <section id="about" class="scroll-section">
+      <h2>About Me</h2>
+      <p>
+        I'm a high school senior ranked in the top 3% of my class with a 4.0 GPA. I have completed multiple programming and computer science courses and am passionate about building meaningful digital experiences and problem solving through technology.
+      </p>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    
-    <div class="project">
+    <section id="projects" class="scroll-section">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive site designed to showcase my academic background and coding projects.</p>
+      </div>
+
+      <div class="project">
+        <h3>Scratch Gamer</h3>
+        <p>Created game inspired by <i>Super Mario</i> on Scratch.</p>
+      </div>
+
+      <div class="project">
+        <h3>Global Warming Project (HTML/CSS/JS)</h3>
+        <p>Built a website with a team displaying the harmful effects of global warming.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-section">
+      <h2>Contact</h2>
+      <p>Email: calhounmakailyn@gmail.com</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Makailyn Calhoun. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Fade-in effect on scroll using Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.scroll-section');
+
+      const options = {
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
+
       <h3>Personal Portfolio Website</h3>
       <p>A responsive website designed to showcase my academic background and coding projects.</p>
       <a href="#" class="button">View Project</a>
@@ -52,3 +221,4 @@
   </footer>
 </body>
 </html>
+
