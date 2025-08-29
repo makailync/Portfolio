@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Hi, I'm Makailyn Calhoun</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <!-- <img src="assets/profile.jpg" alt="Profile Picture"/> →
+    <p>
+      I’m a high school senior passionate about computer science.
+      I enjoy building websites, coding games, and solving real-world problems with technology.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Replica Mario Game</h3>
+      <p>A fun browser-based Mario-style game I coded using JavaScript.</p>
+      <a href="https://github.com/yourusername/mario-replica">View Code</a>
+    </div>
+    <div class="project">
+      <h3>Climate Change Website</h3>
+      <p>A collaborative website explaining the science of global warming and its solutions.</p>
+      <a href="https://github.com/yourusername/climate-site">View Code</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href=calhounmakailyn@gmail.com">calhounmakailyn@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/makailync">github.com/yourusername</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Makailyn Calhoun. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
