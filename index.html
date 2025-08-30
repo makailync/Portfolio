@@ -13,7 +13,64 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
+      .navbar {
+  background-color: rgba(13, 71, 161, 0.95);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Archivo', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #90caf9;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(13, 71, 161, 0.95);
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
 
     body {
       font-family: 'Archivo', sans-serif;
@@ -191,7 +248,16 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
   <div class="container">
+
     <header>
       <h1>Makailyn Calhoun</h1>
       <p>High School Senior | Aspiring Computer Scientist</p>
@@ -218,14 +284,6 @@
 </section>
 
 
-    <section id="links" class="scroll-section">
-      <h2>My Projects (Links)</h2>
-      <div class="links">
-        <a href="https://scratch.mit.edu/projects/1109349649" target="_blank">Play Mario Game</a>
-        <a href="https://codeprojects.org/projects/weblab/JPwK9FyN5oZLynqnhbbFz6GBV5b1UXBROtFxOaKrVHk" target="_blank">View Global Warming Project</a>
-        <a href="https://codeprojects.org/projects/weblab/zSvuE0kQd8NB19ZcgNXtNr48INI7z4VxUBjl3VEJcvM" target="_blank">View Research Project</a>
-      </div>
-    </section>
 
     <section id="projects" class="scroll-section">
       <h2>Project Descriptions</h2>
@@ -281,9 +339,14 @@
 
       sections.forEach(section => observer.observe(section));
     });
+    // Hamburger menu toggle
+document.getElementById('menu-icon').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('show');
+});
   </script>
 </body>
 </html>
+
 
 
 
