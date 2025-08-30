@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Makailyn Calhoun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: linear-gradient(135deg, #0a0f3c, #3a006a, #5a0e8e);
+      color: #ffffff; 
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #90caf9;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #0d47a1;
+    }
+
+    .links {
+      text-align: center;
+    }
+
+    .links a {
+      display: inline-block;
+      background-color: #0d47a1;
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 0.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Archivo', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #1976d2;
+    }
+
+    .navbar {
+      background-color: rgba(13, 71, 161, 0.95);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-icon {
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-family: 'Archivo', sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #90caf9;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(13, 71, 161, 0.95);
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>My Projects</h1>
+    <div class="links">
+      <a href="https://scratch.mit.edu/projects/1109349649" target="_blank">Play Mario Game</a>
+      <a href="https://codeprojects.org/projects/weblab/JPwK9FyN5oZLynqnhbbFz6GBV5b1UXBROtFxOaKrVHk" target="_blank">View Global Warming Project</a>
+      <a href="https://codeprojects.org/projects/weblab/zSvuE0kQd8NB19ZcgNXtNr48INI7z4VxUBjl3VEJcvM" target="_blank">View Research Project</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('menu-icon').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
