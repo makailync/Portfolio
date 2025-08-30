@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -18,17 +17,12 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #cfd8dc;
+      background: linear-gradient(135deg, #000000, #0a0f3c, #3a006a);
+      color: #90caf9;
       line-height: 1.6;
       overflow-x: hidden;
       scroll-behavior: smooth;
       min-height: 100vh;
-      background-image:
-        radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.05) 0, transparent 25%),
-        radial-gradient(circle at 75% 75%, rgba(0, 255, 255, 0.05) 0, transparent 25%);
-      background-repeat: no-repeat;
-      background-size: 50% 50%;
     }
 
     .container {
@@ -40,10 +34,10 @@
     header {
       text-align: center;
       margin-bottom: 4rem;
-      color: #00ffff;
+      color: #90caf9;
       text-shadow:
-        0 0 10px #00ffff,
-        0 0 20px #00ffff;
+        0 0 10px #0d47a1,
+        0 0 20px #0d47a1;
     }
 
     header h1 {
@@ -58,23 +52,19 @@
       font-weight: 400;
       letter-spacing: 1.5px;
       font-style: italic;
-      text-shadow: 0 0 8px #00ced1;
+      text-shadow: 0 0 8px #1976d2;
     }
 
     section {
-      background: rgba(10, 30, 40, 0.8);
+      background: rgba(10, 20, 40, 0.7);
       border-radius: 14px;
-      box-shadow:
-        0 0 15px rgba(0, 255, 255, 0.3),
-        inset 0 0 10px rgba(0, 255, 255, 0.15);
-      margin-bottom: 4rem;
-      padding: 2.5rem 2rem;
+      box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+      margin-bottom: 3rem;
+      padding: 2rem;
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-      border: 1.5px solid #00ffff;
-      position: relative;
-      overflow: hidden;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      border: 1px solid #1e88e5;
     }
 
     section.visible {
@@ -84,44 +74,50 @@
 
     h2 {
       font-family: 'Inconsolata', monospace;
-      font-size: 2.8rem;
-      margin-bottom: 1.2rem;
-      color: #00ffff;
+      font-size: 2.5rem;
+      color: #64b5f6;
       text-align: center;
-      text-shadow: 0 0 8px #00ffff;
+      margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.15rem;
-      color: #b0bec5;
+      color: #bbdefb;
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.7;
-      font-family: 'Poppins', sans-serif;
+    }
+
+    .links {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .links a {
+      display: inline-block;
+      background-color: #0d47a1;
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 0.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Inconsolata', monospace;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #1976d2;
     }
 
     .project {
-      margin-top: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      border: 1px solid #00bcd4;
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      background: rgba(0, 188, 212, 0.1);
-      box-shadow:
-        0 0 8px rgba(0, 188, 212, 0.5);
       display: flex;
-      align-items: center;
-      gap: 1.3rem;
-      color: #e0f7fa;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      box-shadow:
-        0 0 15px rgba(0, 255, 255, 0.8),
-        0 0 20px rgba(0, 255, 255, 0.8);
+      flex-direction: row;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+      background-color: rgba(25, 25, 112, 0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid #3949ab;
     }
 
     .project img {
@@ -129,66 +125,48 @@
       height: 80px;
       object-fit: cover;
       border-radius: 8px;
-      border: 1px solid #00bcd4;
-      box-shadow: 0 0 10px #00bcd4;
-      flex-shrink: 0;
+      border: 1px solid #1e88e5;
     }
 
-    .project-details {
-      flex: 1;
-    }
-
-    .project h3 {
+    .project-details h3 {
+      font-size: 1.3rem;
+      color: #64b5f6;
+      margin-bottom: 0.3rem;
       font-family: 'Inconsolata', monospace;
-      font-size: 1.5rem;
-      margin-bottom: 0.2rem;
-      color: #00ffff;
-      text-shadow: 0 0 6px #00ffff;
     }
 
-    .project p {
+    .project-details p {
       font-family: 'Inconsolata', monospace;
-      font-size: 1rem;
-      color: #a7ffeb;
-      line-height: 1.4;
+      color: #e3f2fd;
     }
 
     section#contact p, section#contact a {
-      font-family: 'Poppins', sans-serif;
-      color: #80deea;
-      font-size: 1.1rem;
       text-align: center;
-      margin: 0.4rem 0;
+      font-family: 'Poppins', sans-serif;
+      color: #90caf9;
+      font-size: 1.1rem;
       text-decoration: none;
-      display: block;
     }
 
     section#contact a:hover {
       text-decoration: underline;
-      color: #00e5ff;
+      color: #64b5f6;
     }
 
     footer {
       text-align: center;
-      color: #00bcd4;
+      color: #546e7a;
       font-size: 0.9rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 6px #00bcd4;
+      margin-top: 2rem;
       font-family: 'Inconsolata', monospace;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.8rem;
-      }
-      section {
-        padding: 2rem 1.2rem;
-      }
       .project {
         flex-direction: column;
-        gap: 0.8rem;
+        align-items: center;
       }
+
       .project img {
         width: 100%;
         height: auto;
@@ -201,21 +179,29 @@
   <div class="container">
     <header>
       <h1>Makailyn Calhoun</h1>
-      <p>High School Senior | Computer Scientist</p>
+      <p>High School Senior | Aspiring Computer Scientist</p>
     </header>
 
     <section id="about" class="scroll-section">
       <h2>About Me</h2>
       <p>
-        I'm a high school senior ranked in the top 3% of my class with a 4.0 GPA. I have completed multiple programming and computer science courses and am passionate about building meaningful digital experiences and problem solving through technology.
+        I am a high school senior ranked in the top 3% of my class with a 4.0 GPA. I have completed programming and computer science courses and am passionate about building meaningful digital experiences and problem solving through technology.
       </p>
     </section>
 
+    <section id="links" class="scroll-section">
+      <h2>My Projects (Links)</h2>
+      <div class="links">
+        <a href="https://scratch.mit.edu/projects/1109349649" target="_blank">Play Mario Game</a>
+        <a href="https://codeprojects.org/projects/weblab/JPwK9FyN5oZLynqnhbbFz6GBV5b1UXBROtFxOaKrVHk" target="_blank">View Global Warming Project</a>
+      </div>
+    </section>
+
     <section id="projects" class="scroll-section">
-      <h2>Projects</h2>
+      <h2>Project Descriptions</h2>
 
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Mario Game on Scratch" />
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Mario Game Screenshot" />
         <div class="project-details">
           <h3>Replica Mario Game</h3>
           <p>A fully functional Mario game replica created using Scratch, showcasing interactive gameplay and character animations.</p>
@@ -223,18 +209,18 @@
       </div>
 
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Global Warming Project on Code.org" />
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Global Warming Project" />
         <div class="project-details">
           <h3>Global Warming Team Project</h3>
-          <p>Collaborated on a global warming awareness project on Code.org; responsible for CSS styling and special effects pages.</p>
+          <p>Collaborated on a global warming awareness project on Code.org; responsible for CSS styling and effects page.</p>
         </div>
       </div>
     </section>
 
     <section id="contact" class="scroll-section">
       <h2>Contact</h2>
-      <p>Email: makailync@example.com</p>
-      <p><a href="#" target="_blank">linkedin.com/in/makailyncalhoun</a></p>
+      <p>Email: calhounmakailyn@gmail.com</p>
+      <p>Phone: (470)-864-5141</p>
     </section>
 
     <footer>
@@ -243,31 +229,21 @@
   </div>
 
   <script>
-    // Fade-in effect on scroll using Intersection Observer
+    // Fade-in scroll animation
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('.scroll-section');
-
-      const options = {
-        threshold: 0.15
-      };
-
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting) {
+          if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         });
-      }, options);
+      }, { threshold: 0.15 });
 
-      sections.forEach(section => {
-        observer.observe(section);
-      });
+      sections.forEach(section => observer.observe(section));
     });
   </script>
 </body>
 </html>
-
-</html>
-
 
