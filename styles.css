@@ -1,3 +1,18 @@
+body.home-page p {
+  font-size: 1.15rem;
+  color: #bbdefb;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+body {
+  font-family: 'Archivo', sans-serif;
+  background: linear-gradient(135deg, #0a0f3c, #3a006a, #5a0e8e);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
 body.home-page header {
   text-align: center;
   margin-bottom: 4rem;
@@ -39,13 +54,6 @@ body.home-page h3 {
   margin-top: 1.5rem;
 }
 
-body.home-page p {
-  font-size: 1.15rem;
-  color: #bbdefb;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
 
 body.home-page footer {
   text-align: center;
@@ -54,9 +62,6 @@ body.home-page footer {
   margin-top: 2rem;
 }
 
-body.home-page p {
-  font-size: 1.15rem !important;
-  color: limegreen !important;
-  background: black !important;
-}
+
+
 
