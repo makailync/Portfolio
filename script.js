@@ -13,3 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+let lastScrollY = window.scrollY;
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const isScrollingDown = window.scrollY > lastScrollY;
+
+    if (entry.isIntersecting && isScrollingDown) {
+      entry.target.classList.add('visible');
+    } else if (!isScrollingDown) {
+      entry.target.classList.remove('visible');
+    }
+  });
+
+  lastScrollY = window.scrollY;
+}, {
+  threshold: 0.1
+});
+
+const fadeElements = document.querySelectorAll('.fade-in-text');
+fadeElements.forEach(el => observer.observe(el));
+
