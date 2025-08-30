@@ -54,3 +54,9 @@ body.home-page footer {
   margin-top: 2rem;
 }
 
+body.home-page p {
+  font-size: 1.15rem !important;
+  color: limegreen !important;
+  background: black !important;
+}
+
