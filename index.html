@@ -3,91 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Makailyn Calhoun | Portfolio</title>
-  
-  <!-- Google Fonts: Archivo -->
+  <title>Makailyn Calhoun | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      .navbar {
-  background-color: rgba(13, 71, 161, 0.95);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu-icon {
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-  display: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-family: 'Archivo', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #90caf9;
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: rgba(13, 71, 161, 0.95);
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-
     body {
       font-family: 'Archivo', sans-serif;
       background: linear-gradient(135deg, #0a0f3c, #3a006a, #5a0e8e);
-      color: #ffffff; 
-      line-height: 1.6;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      min-height: 100vh;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Hamburger Menu */
+    .hamburger-menu {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+    }
 
-.container {
-  background: transparent;
-}
+    .menu-toggle {
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
 
-    
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(13, 71, 161, 0.95);
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .dropdown a {
+      color: white;
+      padding: 0.75rem 1.2rem;
+      text-decoration: none;
+      font-family: 'Archivo', sans-serif;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #1976d2;
+    }
+
+    .dropdown.show {
+      display: flex;
+    }
 
     .container {
       max-width: 900px;
@@ -99,13 +67,10 @@
       text-align: center;
       margin-bottom: 4rem;
       color: #90caf9;
-      text-shadow:
-        0 0 10px #0d47a1,
-        0 0 20px #0d47a1;
+      text-shadow: 0 0 10px #0d47a1, 0 0 20px #0d47a1;
     }
 
     header h1 {
-     font-family: 'Archivo', sans-serif;
       font-size: 4rem;
       margin-bottom: 0.3rem;
       letter-spacing: 2px;
@@ -114,7 +79,6 @@
     header p {
       font-size: 1.4rem;
       font-weight: 400;
-      letter-spacing: 1.5px;
       font-style: italic;
       text-shadow: 0 0 8px #1976d2;
     }
@@ -122,35 +86,23 @@
     section {
       background: rgba(10, 20, 40, 0.7);
       border-radius: 14px;
-      box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
       margin-bottom: 3rem;
       padding: 2rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
       border: 1px solid #1e88e5;
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     h2 {
-      font-family: 'Archivo', sans-serif;
       font-size: 2.5rem;
       color: #64b5f6;
       text-align: center;
       margin-bottom: 1rem;
     }
-    h3 {
-  font-size: 1.6rem;
-  color: #82b1ff;
-  font-family: 'Archivo', sans-serif;
-  margin-top: 1.5rem;
-  margin-bottom: 0.6rem;
-}
 
+    h3 {
+      font-size: 1.6rem;
+      color: #82b1ff;
+      margin-top: 1.5rem;
+    }
 
     p {
       font-size: 1.15rem;
@@ -160,160 +112,52 @@
       line-height: 1.7;
     }
 
-    .links {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .links a {
-      display: inline-block;
-      background-color: #0d47a1;
-      color: #ffffff;
-      padding: 10px 20px;
-      margin: 0.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-     font-family: 'Archivo', sans-serif;
-      transition: background-color 0.3s ease;
-    }
-
-    .links a:hover {
-      background-color: #1976d2;
-    }
-
-    .project {
-      display: flex;
-      flex-direction: row;
-      gap: 1.2rem;
-      margin-top: 1.8rem;
-      background-color: rgba(25, 25, 112, 0.2);
-      border-radius: 10px;
-      padding: 1rem;
-      border: 1px solid #3949ab;
-    }
-
-    .project img {
-      width: 120px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #1e88e5;
-    }
-
-    .project-details h3 {
-      font-size: 1.3rem;
-      color: #64b5f6;
-      margin-bottom: 0.3rem;
-     font-family: 'Archivo', sans-serif;
-    }
-
-    .project-details p {
-     font-family: 'Archivo', sans-serif;
-      color: #e3f2fd;
-    }
-
-    section#contact p, section#contact a {
-      text-align: center;
-      font-family: 'Archivo', sans-serif;
-      color: #90caf9;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    section#contact a:hover {
-      text-decoration: underline;
-      color: #64b5f6;
-    }
-
     footer {
       text-align: center;
       color: #546e7a;
       font-size: 0.9rem;
       margin-top: 2rem;
-      font-family: 'Archivo', sans-serif;
-    }
-
-    @media (max-width: 600px) {
-      .project {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .project img {
-        width: 100%;
-        height: auto;
-      }
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="menu-icon" id="menu-icon">&#9776;</div>
-    <div class="nav-links" id="nav-links">
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="dropdown" id="dropdown">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
     </div>
-  </nav>
+  </div>
 
   <div class="container">
-
     <header>
       <h1>Makailyn Calhoun</h1>
       <p>High School Senior | Aspiring Computer Scientist</p>
     </header>
 
-    <section id="about" class="scroll-section">
+    <section id="about">
       <h2>About Me</h2>
       <h3>Education</h3>
       <p>
-        I am a high school senior ranked in the top 3% of my class with a 4.0 GPA. I have completed programming and computer science courses, as well as AP classes such as biology, U.S. history, and english language and composition. I am currently taking AP pre-calculus, macroeconomics, and english literature and composition. 
+        I am a high school senior ranked in the top 3% of my class with a 4.0 GPA...
       </p>
+
       <h3>Why Computer Science?</h3>
       <p>
-        At the young age of three years, I began exploring technology through learning apps, and it quickly became a part of my everyday life. As I grew older, I noticed how essential technology became: not just for entertainment or education, but for how people live, work, and connect. I knew early on I wanted a future in the tech-world -- I just did not know where I would fit in. <br>
-        It wasn't until I started exploring programming and computer science that everything finally clicked. The problem-solving, logic, and creativity involved in coding, as well as the captivating complexity of technology, made it clear that this is the path I want to follow. Through classes, projects, and hands-on experience, I’ve found a deep passion for computer science -- and I’m excited to keep learning and building in this ever-evolving field.
+        I’ve found a deep passion for computer science...
       </p>
     </section>
-    
-    <section id="future" class="scroll-section">
-  <h2>Future Plans</h2>
-  <p>
-    I plan to pursue a degree in Computer Science and continue developing my skills in programming, web development, and software engineering. I'm especially interested in creating innovative tech solutions, collaborating on real-world projects, and exploring areas like artificial intelligence and cybersecurity. My goal is to contribute meaningfully to the tech community while constantly learning and growing as a developer and as an individual.
-  </p>
-</section>
 
-
-
-    <section id="projects" class="scroll-section">
-      <h2>Project Descriptions</h2>
-
-      <div class="project">
-        <img src="assets/mariogame.jpg" alt="Mario game screenshot" />
-        <div class="project-details">
-          <h3>Replica Mario Game</h3>
-          <p>A fully functional game inspired by <i>Super Mario</i> that I programmed using Scratch, even creating all of the backgrounds and sprites involved. This game showcases interactive gameplay and character animations.</p>
-        </div>
-      </div>
-
-      <div class="project">
-         <img src="assets/globalwarming.jpg" alt="Global Warming Project" />
-        <div class="project-details">
-          <h3>Global Warming Team Project</h3>
-          <p>Collaborated on a global warming awareness project on Code.org where I was responsible for CSS and effects page.</p>
-        </div>
-      </div>
-
-      <div class="project">
-         <img src="assets/webpage.jpg" alt="Research Project" />
-        <div class="project-details">
-          <h3>Research Project</h3>
-          <p>Conducted research on the country of Morrocco and created a web page providing the information I gathered using CSS and HTML.</p>
-        </div>
-      </div>
+    <section id="future">
+      <h2>Future Plans</h2>
+      <p>
+        I plan to pursue a degree in Computer Science and continue developing my skills...
+      </p>
     </section>
 
-    <section id="contact" class="scroll-section">
+    <section id="contact">
       <h2>Contact</h2>
       <p>Email: calhounmakailyn@gmail.com</p>
       <p>Phone: (470)-864-5141</p>
@@ -325,29 +169,12 @@
   </div>
 
   <script>
-    // Fade-in scroll animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.scroll-section');
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-
-      sections.forEach(section => observer.observe(section));
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('dropdown').classList.toggle('show');
     });
-    // Hamburger menu toggle
-document.getElementById('menu-icon').addEventListener('click', () => {
-  document.getElementById('nav-links').classList.toggle('show');
-});
   </script>
 </body>
 </html>
-
-
 
 
 
