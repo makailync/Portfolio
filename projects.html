@@ -15,8 +15,7 @@
       padding: 0;
     }
 
-   /* Hamburger Menu */
-.hamburger-menu {
+  .hamburger-menu {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -30,28 +29,29 @@
   user-select: none;
 }
 
+
 .dropdown {
   max-height: 0;
   overflow: hidden;
+  display: flex;
   flex-direction: column;
   background-color: rgba(13, 71, 161, 0.95);
   position: absolute;
   top: 2.5rem;
   right: 0;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: max-height 0.35s ease-in-out;
-   gap: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: max-height 0.4s ease-in-out;
+  gap: 0.8rem;
 }
+
 
 .dropdown a {
   color: white;
-  padding: 2.5rem 2.5rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
   text-decoration: none;
-  font-family: 'Archivo', sans-serif;
-  font-size: 1.2rem;
   transition: background 0.3s;
- 
 }
 
 .dropdown a:hover {
@@ -60,7 +60,8 @@
 
 
 .dropdown.show {
-  max-height: 300px; 
+  max-height: 300px;
+
 }
 
     .container {
@@ -120,6 +121,7 @@
   </script>
 </body>
 </html>
+
 
 
 
