@@ -1,18 +1,4 @@
-.fade-in-text {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.fade-in-text.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* styles.css */
-
-/* Shared Styles for both pages */
-/* General Styles */
+/* Shared Styles */
 body {
   font-family: 'Archivo', sans-serif;
   background: linear-gradient(135deg, #0a0f3c, #3a006a, #5a0e8e);
@@ -21,7 +7,6 @@ body {
   padding: 0;
 }
 
-/* Hamburger menu shared styles */
 .hamburger-menu {
   position: fixed;
   top: 1rem;
@@ -36,127 +21,7 @@ body {
   user-select: none;
 }
 
-.dropdown {
-  max-height: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(13, 71, 161, 0.95);
-  position: absolute;
-  top: 2.5rem;
-  right: 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: max-height 0.4s ease-in-out;
-  gap: 1.8rem;
-}
-
-.dropdown a {
-  color: white;
-  padding: 1.2rem 2rem;
-  font-size: 1.4rem;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.dropdown a:hover {
-  background-color: #1976d2;
-}
-
-.dropdown.show {
-  max-height: 300px;
-}
-
-/* Container used on both pages */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-}
-
-
-body.home-page header {
-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  color: #90caf9;
-  text-shadow: 0 0 10px #0d47a1, 0 0 20px #0d47a1;
-}
-
-body.home-page header h1 {
-header h1 {
-  font-size: 4rem;
-  margin-bottom: 0.3rem;
-  letter-spacing: 2px;
-}
-
-body.home-page header p {
-header p {
-  font-size: 1.4rem;
-  font-weight: 400;
-  font-style: italic;
-  text-shadow: 0 0 8px #1976d2;
-}
-
-body.home-page section {
-section {
-  background: rgba(10, 20, 40, 0.7);
-  border-radius: 14px;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  border: 1px solid #1e88e5;
-}
-
-body.home-page h2 {
-h2 {
-  font-size: 2.5rem;
-  color: #64b5f6;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-body.home-page h3 {
-h3 {
-  font-size: 1.6rem;
-  color: #82b1ff;
-  margin-top: 1.5rem;
-}
-
-body.home-page p {
-p {
-  font-size: 1.15rem;
-  color: #bbdefb;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-body.home-page footer {
-footer {
-  text-align: center;
-  color: #546e7a;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
-/* --------- Projects Page Styles --------- */
-body.projects-page h1 {
-/* Hamburger Menu */
-.hamburger-menu {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
-}
-
-.menu-toggle {
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Dropdown Menu */
+/* Dropdown */
 .dropdown {
   max-height: 0;
   opacity: 0;
@@ -173,49 +38,24 @@ body.projects-page h1 {
   gap: 1.8rem;
 }
 
-.dropdown a {
-  color: white;
-  padding: 1.2rem 2rem;
-  font-size: 1.4rem;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.dropdown a:hover {
-  background-color: #1976d2;
-}
-
 .dropdown.show {
   max-height: 300px;
   opacity: 1;
 }
 
-/* Project Links */
-.links {
+/* Home Page */
+body.home-page header {
   text-align: center;
-  font-size: 3rem;
+  margin-bottom: 4rem;
   color: #90caf9;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px #0d47a1;
+  text-shadow: 0 0 10px #0d47a1, 0 0 20px #0d47a1;
 }
 
-body.projects-page .links a {
-.links a {
-  display: inline-block;
-  background-color: #0d47a1;
-  color: #ffffff;
-  padding: 10px 20px;
-  margin: 0.5rem;
-  margin: 0.5rem 1rem; /* Add horizontal margin to space buttons */
-  border-radius: 8px;
-  text-decoration: none;
-  font-family: 'Archivo', sans-serif;
-  transition: background-color 0.3s ease;
+body.home-page header h1 {
+  font-size: 4rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 2px;
 }
 
-body.projects-page .links a:hover {
-.links a:hover {
-  background-color: #1976d2;
-}
 
 
