@@ -34,3 +34,9 @@ const observer = new IntersectionObserver((entries) => {
 const fadeElements = document.querySelectorAll('.fade-in-text');
 fadeElements.forEach(el => observer.observe(el));
 
+document.getElementById('menu-toggle').addEventListener('click', function () {
+  const dropdown = document.getElementById('dropdown');
+  dropdown.classList.toggle('show');
+});
+
+
