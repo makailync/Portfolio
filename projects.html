@@ -10,27 +10,69 @@
     body {
       font-family: 'Archivo', sans-serif;
       background: linear-gradient(135deg, #0a0f3c, #3a006a, #5a0e8e);
-      color: #ffffff; 
+      color: #ffffff;
       margin: 0;
       padding: 0;
     }
+
+   /* Hamburger Menu */
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Initially hide dropdown but keep it ready for height transition */
+.dropdown {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: rgba(13, 71, 161, 0.95);
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: max-height 0.35s ease-in-out;
+}
+
+.dropdown a {
+  color: white;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+  font-family: 'Archivo', sans-serif;
+  transition: background 0.3s;
+}
+
+.dropdown a:hover {
+  background-color: #1976d2;
+}
+
+
+.dropdown.show {
+  max-height: 300px; 
+}
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       font-size: 3rem;
       color: #90caf9;
       margin-bottom: 2rem;
       text-shadow: 0 0 10px #0d47a1;
-    }
-
-    .links {
-      text-align: center;
     }
 
     .links a {
@@ -48,86 +90,30 @@
     .links a:hover {
       background-color: #1976d2;
     }
-
-    .navbar {
-      background-color: rgba(13, 71, 161, 0.95);
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .menu-icon {
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-      display: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-family: 'Archivo', sans-serif;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #90caf9;
-    }
-
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: rgba(13, 71, 161, 0.95);
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem 0;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="menu-icon" id="menu-icon">&#9776;</div>
-    <div class="nav-links" id="nav-links">
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="dropdown" id="dropdown">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
     </div>
-  </nav>
+  </div>
 
   <div class="container">
     <h1>My Projects</h1>
     <div class="links">
-      <a href="https://scratch.mit.edu/projects/1109349649" target="_blank">Play Mario Game</a>
-      <a href="https://codeprojects.org/projects/weblab/JPwK9FyN5oZLynqnhbbFz6GBV5b1UXBROtFxOaKrVHk" target="_blank">View Global Warming Project</a>
-      <a href="https://codeprojects.org/projects/weblab/zSvuE0kQd8NB19ZcgNXtNr48INI7z4VxUBjl3VEJcvM" target="_blank">View Research Project</a>
+      <a href="https://scratch.mit.edu/projects/1109349649" target="_blank" rel="noopener noreferrer">Play Mario Game</a>
+      <a href="https://codeprojects.org/projects/weblab/JPwK9FyN5oZLynqnhbbFz6GBV5b1UXBROtFxOaKrVHk" target="_blank" rel="noopener noreferrer">View Global Warming Project</a>
+      <a href="https://codeprojects.org/projects/weblab/zSvuE0kQd8NB19ZcgNXtNr48INI7z4VxUBjl3VEJcvM" target="_blank" rel="noopener noreferrer">View Research Project</a>
     </div>
   </div>
 
   <script>
-    document.getElementById('menu-icon').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('show');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('dropdown').classList.toggle('show');
     });
   </script>
 </body>
